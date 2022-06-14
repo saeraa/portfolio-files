@@ -1,0 +1,105 @@
+section.section-portfolio img.portfolio-img {
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--background-color);
+    transition: all .5s;
+    filter: grayscale(50%);
+}
+
+section.section-portfolio img.portfolio-img:hover {
+    transform:scale(1.1);
+    filter: grayscale(0%);
+}
+
+
+.section-portfolio {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.article-portfolio {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: 1em;
+    border-bottom: 4px solid var(--background-color);
+    max-width: 65ch;
+}
+
+.article-portfolio:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1em;
+}
+
+.section-portfolio h2 {
+    font-family: 'Passion One', cursive;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px var(--box-shadow-color-two);
+}
+
+.tools {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    gap: .5em;
+}
+
+span.icon {
+    border-radius: 5px;
+    padding: .4em 1.2em;
+    font-family: 'Passion One', cursive;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .9em;
+    letter-spacing: .5px;
+    box-shadow: 1px 1px 2px var(--box-shadow-color-two);
+    background: var(--background-color-two);
+}
+
+
+.tools .icon img {
+    vertical-align: middle;
+    top: -1px;
+    left: -2px;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+span.icon img {
+    width: 20px;
+}
+
+@media screen and (min-width: 500px) {
+    .article-portfolio {
+      flex-direction: row;
+    }
+    .article-portfolio:nth-of-type(odd) {
+      flex-direction: row-reverse;
+    }
+    .section-portfolio {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .article-portfolio {
+        padding: 1em;
+    }
+    p.tools {
+        margin-bottom: 1em;
+    }
+}

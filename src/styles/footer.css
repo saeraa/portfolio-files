@@ -1,0 +1,32 @@
+footer {
+    margin: auto;
+    align-items: center;
+    padding: 0 0 .5em 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    vertical-align: text-top;
+    gap: .5em;
+    bottom: 0;
+    max-height: 10vh;
+}
+
+footer ul li {
+    width: 40px;
+    height: 40px;
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all .5s;
+    box-shadow: 1px 1px 4px var(--box-shadow-color-three);
+    filter: invert(65%) sepia(100%);
+}
+
+footer img:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 4px var(--box-shadow-color-three);
+    filter: invert(65%);
+}
