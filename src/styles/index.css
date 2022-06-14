@@ -1,5 +1,6 @@
 /* COLORS */ 
 /* light mode */
+@media (prefers-color-scheme: light) {
 :root {
   --background-color: #efefef;
   --portrait-background: #efefef;
@@ -15,27 +16,29 @@
   --accent-color-three: #416c48;
   --accent-color-opacity: rgba(191, 198, 113, 0.129);
 }
-
+}
 
 /* dark mode */
-/* :root {
---links-color-hover: #416c48;
---accent-color: #416c48; 
---accent-color-two: #888888; 
---accent-color-three: hsl(32deg 80% 75%); 
---accent-color-opacity: #416c4871;
---background-color: #303030; 
---background-color-two: #3f3f3f; 
---links-color: #efefef; 
---links-color-two: #d0d0d0; 
---box-shadow-color: rgba(0, 0, 0, 0.1); 
---box-shadow-color-two: rgba(0, 0, 0, 0.4);
---box-shadow-color-three: rgba(0, 0, 0, 0.6);
-  color: var(--links-color);
-} */
-
-
-*, *::before, *::after {
+:root {
+  @media (prefers-color-scheme: dark) {
+    --links-color-hover: #416c48;
+    --accent-color: #416c48; 
+    --accent-color-two: #888888; 
+    --accent-color-three: hsl(32deg 80% 75%); 
+    --accent-color-opacity: #416c4871;
+    --background-color: #303030; 
+    --background-color-two: #3f3f3f; 
+    --links-color: #efefef; 
+    --links-color-two: #d0d0d0; 
+    --box-shadow-color: rgba(0, 0, 0, 0.1); 
+    --box-shadow-color-two: rgba(0, 0, 0, 0.4);
+    --box-shadow-color-three: rgba(0, 0, 0, 0.6);
+    color: var(--links-color);
+  } 
+}
+  
+  
+  *, *::before, *::after {
   padding: 0;
   margin: 0;
   font-family: 'Athiti', sans-serif;
@@ -64,6 +67,7 @@ body {
     background: var(--background-color);
     color: var(--links-color);
     max-width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 
 #container {

@@ -66,6 +66,7 @@ h2 {
 
 div.portrait {
     height: 220px;
+    transition: all 0.3s ease-in-out;
     width: 220px;
     background: var(--background-color);
     border-radius: 50%;

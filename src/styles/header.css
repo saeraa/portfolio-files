@@ -11,8 +11,8 @@ li {
     list-style-type: none;
 }
 
-li.selected {
-    background: var(--accent-color-opacity);
+.selected > li {
+    background: var(--links-color-two);
 }
 
 header li {
@@ -21,7 +21,7 @@ header li {
     margin: 5px;
     color: var(--background-color);
     background-color: var(--accent-color-three);    
-    text-shadow: 0px 0px 4px var(--accent-color-three);
+    /* text-shadow: 0px 0px 4px var(--accent-color-three); */
     box-shadow: 0px 0px 12px var(--box-shadow-color-two);
     text-decoration: none;
     border-radius: 3px;

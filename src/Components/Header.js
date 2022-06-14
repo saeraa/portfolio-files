@@ -1,22 +1,18 @@
 import React from "react"
 import '.././styles/header.css'
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function Header(props) {
-    // let originalMode = localStorage.getItem('colorMode') || true
     const [colorMode, setColorMode] = React.useState(true)
     const r = document.querySelector(':root')
 
-    // console.log(localStorage.getItem('colorMode'))
-
-    // React.useEffect(() => {
-    //     originalMode = localStorage.getItem('colorMode')
-    //     console.log("colormode from ls " + originalMode)
-    //     if (originalMode) {
-    //         setColorMode(originalMode)
-    //     }
-    // }, [])
-    // console.log("colormode from state " + colorMode)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches === false) {
+            setColorMode((prevMode) => prevMode = true)
+        } else {
+            setColorMode((prevMode) => prevMode = false)
+        }
+    })
 
     if (!colorMode) { /* dark mode */
         r.style.setProperty("--background-color", "#303030")
@@ -48,14 +44,7 @@ export default function Header(props) {
         r.style.setProperty("--accent-color-opacity", "rgba(191, 198, 113, 0.129)")
     }
 
-
-    // React.useEffect(() => {
-    //     localStorage.setItem('colorMode', colorMode)
-    // }, [colorMode])
-
-    // const mybox = document.getElementById("checkbox")
     function changeMode() {
-        // if (mybox.checked) { console.log("check") } else { console.log("no check") }
         setColorMode(prevMode => !prevMode)
     }
 
@@ -69,9 +58,18 @@ export default function Header(props) {
             </div>
 
             <ul>
-                <Link to="/"><li>about</li></Link>
-                <Link to="/portfolio"><li>portfolio</li></Link>
-                <Link to="/contact"><li>contact</li></Link>
+                <NavLink to="/"
+                    className={({ isActive }) =>
+                        (isActive ? "selected" : null)}
+                ><li>about</li></NavLink>
+                <NavLink to="/portfolio"
+                    className={({ isActive }) =>
+                        (isActive ? "selected" : null)}
+                ><li>portfolio</li></NavLink>
+                <NavLink to="/contact"
+                    className={({ isActive }) =>
+                        (isActive ? "selected" : null)}
+                ><li>contact</li></NavLink>
             </ul>
         </header>
     )
