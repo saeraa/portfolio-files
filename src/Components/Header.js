@@ -3,7 +3,9 @@ import '.././styles/header.css'
 import { NavLink } from "react-router-dom"
 
 export default function Header(props) {
-    const [colorMode, setColorMode] = React.useState(true)
+    let initialMode = !window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    const [colorMode, setColorMode] = React.useState(initialMode)
     const r = document.querySelector(':root')
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
